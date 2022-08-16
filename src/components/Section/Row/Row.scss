@@ -1,0 +1,45 @@
+.row {
+    margin-bottom: 50px;
+
+    h2 {
+      margin-bottom: 20px;
+      margin-left: 20px;
+    }
+  .scroll {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }  
+  &__posters {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    
+    margin: 0 20px;
+    padding: 10px;
+    
+    
+    
+    
+    
+    img {
+      max-height: 200px;
+      object-fit: contain;
+      transition: transform 450ms;
+      cursor: pointer;
+      
+      &:hover {
+        transform: scale(1.08);
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .row {
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}

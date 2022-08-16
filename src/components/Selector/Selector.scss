@@ -1,0 +1,44 @@
+.selector {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 50px;
+  width: 100%;
+  overflow: hidden;
+
+  .time {
+    width: 100%;
+    
+    display: flex;
+    align-self: center;
+    justify-content: space-around;
+
+    border-radius: 5px;
+    background-color: rgb(168, 172, 172);
+
+    div {
+      padding: 5px 15px;
+      margin: 5px 0;
+      
+      border-radius: 5px;
+      background-color: beige;
+      color: black;
+
+      font-weight: 600;
+
+      cursor: pointer;
+
+      &.active {
+        background-color: rgb(255, 192, 203);
+      }
+
+      &:hover {
+        background-color: rgb(255, 192, 203);
+      }
+
+      &:active {
+        background-color: rgb(147, 200, 221);
+      }
+    }
+  }
+}

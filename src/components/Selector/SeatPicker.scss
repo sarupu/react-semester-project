@@ -1,0 +1,58 @@
+.seatpicker {
+  position: relative;
+
+
+  &__container {
+    align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: nowrap;
+  margin-top: 50px;
+  
+  
+  &__row {
+    padding-left: 20px;
+    margin-bottom: 3px;
+    position: relative;
+    
+    &:nth-of-type(2n) {
+      padding-left: 35px;
+      
+    }
+    span {
+      position: absolute;
+      left: 0;
+    }
+    
+    input {
+      display: inline-block;
+      position: relative;
+      
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      
+      cursor: pointer;
+      
+      padding: 12px;
+      margin-right: 10px;
+      
+      background-color: beige;
+      border: 1px solid #cacece;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      
+      &:checked {
+        background-color: pink;
+      }
+    }
+  }
+}
+
+  .apply {
+    position: absolute;
+    right: 0px;
+    bottom: 300px;
+  }
+}
