@@ -9,8 +9,8 @@ const Seat = ( {seatsInRow, rowLetter, onClick} ) => {
       <span>{rowLetter.toUpperCase()}</span>
       {rowConstructorArray.map((e, index) => 
       <input 
-        key={`${rowLetter.toUpperCase()}-${index+1}`}
-        name={`${rowLetter.toUpperCase()}-${index+1}`} 
+        key={`${rowLetter.toUpperCase()}-${index + 1}`}
+        name={`${rowLetter.toUpperCase()}-${index + 1}`} 
         type="checkbox" 
         onClick={(e) => onClick(e.target)}
       />)}
