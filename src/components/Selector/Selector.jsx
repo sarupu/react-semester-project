@@ -3,15 +3,16 @@ import { useState } from "react"
 import "./Selector.scss"
 
 const Selector = ({ handleTrigger }) => {
+  //Created some static times array to iterate through.
   const startingTimes = [
-    "08.30",
-    "09.45",
-    "10.30",
-    "12.30",
-    "15.00",
-    "17.30",
-    "21.15",
-    "00.30",
+    "08:30",
+    "09:45",
+    "10:30",
+    "12:30",
+    "15:00",
+    "17:30",
+    "21:15",
+    "00:30",
   ]
 
   const [filter, setFilter] = useState()
