@@ -31,7 +31,6 @@ const payment = selectedSeats.length * 10
         <Seat seatsInRow={7} rowLetter={"h"} onClick={seatClickHandler}/>
       </div>
     </div>
-    
   )
 }
 
