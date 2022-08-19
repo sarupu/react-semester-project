@@ -2,7 +2,7 @@ import SeatPicker from "./SeatPicker"
 import { useState } from "react"
 import "./Selector.scss"
 
-const Selector = ({ handleTrigger }) => {
+const Selector = () => {
   //Created some static times array to iterate through.
   const startingTimes = [
     "08:30",
@@ -28,7 +28,6 @@ const Selector = ({ handleTrigger }) => {
   className={filter === time ? "active" : ""} 
   onClick={() => showSeatSelectorHandler(time)}>{time}</div>
   )
-
 
   return (
     <div className="selector">

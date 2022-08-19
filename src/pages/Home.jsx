@@ -1,4 +1,4 @@
-import Section from "../src/components/Section/Section"
+import Section from "../components/Section/Section"
 
 const Home = () => {
 

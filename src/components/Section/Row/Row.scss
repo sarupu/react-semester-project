@@ -36,10 +36,9 @@
     }
   }
   @media screen and (max-width: 768px) {
-    .row {
-      &::-webkit-scrollbar {
-        display: none;
-      }
+    .row ::-webkit-scrollbar {
+      display: none;
+      
     }
   }
 }

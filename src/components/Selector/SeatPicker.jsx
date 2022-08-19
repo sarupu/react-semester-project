@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import "./SeatPicker.scss"
 import Seat from "./Seat"
-import Button from "../Button/Button"
+
 
 const SeatPicker = () => {
 //selectedSeats constains the seats that are clicked. It adds the seats and if the seat is deselected than it deletes that seat from the array.
