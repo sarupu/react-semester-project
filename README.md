@@ -4,7 +4,9 @@ I created a site that you can browse movies and select seats to book.
 
 This web app built with using [Vite](https://vitejs.dev/) + [React](https://reactjs.org/).
 
-Used [TMDB](https://www.themoviedb.org/) API to get the data i needed.
+Used [TMDB](https://www.themoviedb.org/) API to get the data I needed.
+
+You can access demo [here](https://cinema-seat-selector.netlify.app/).
 
 ### Project Details
 
