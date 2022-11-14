@@ -2,22 +2,26 @@ import axios from "axios"
 import { useCallback } from "react"
 import { useState } from "react"
 
-
 export const img_url = "https://image.tmdb.org/t/p/w500"
 
 const instance = axios.create({
-  baseURL : "https://api.themoviedb.org/3/movie"
+  baseURL: "https://api.themoviedb.org/3/movie",
 })
 
 //Here are some hidden api key calling action.
 const requests = {
-  fetchNowShowing: `/now_playing?api_key=${import.meta.env.VITE_API_KEY}&region=US&page=1`,
-  fetchUpcoming: `/upcoming?api_key=${import.meta.env.VITE_API_KEY}&region=US&page=1`,
-  fetchDetails: `?api_key=${import.meta.env.VITE_API_KEY}&append_to_response=credits`
+  fetchNowShowing: `/now_playing?api_key=${
+    import.meta.env.production.VITE_API_KEY
+  }&region=US&page=1`,
+  fetchUpcoming: `/upcoming?api_key=${
+    import.meta.env.production.VITE_API_KEY
+  }&region=US&page=1`,
+  fetchDetails: `?api_key=${
+    import.meta.env.production.VITE_API_KEY
+  }&append_to_response=credits`,
 }
 
 const useFetch = () => {
-
   // Here i created all the variables that i will use in the site.
   const [movies, setMovies] = useState([])
   const [moviePoster, setMoviePoster] = useState("")
@@ -37,7 +41,6 @@ const useFetch = () => {
       result = await instance.get(requests.fetchNowShowing)
 
       setMovies(result.data.results.slice(0, 5))
-
     } else {
       result = await instance.get(requests.fetchUpcoming)
 
@@ -51,12 +54,22 @@ const useFetch = () => {
     // I made some data manipulations before i set the data.
     setMoviePoster(`${img_url}${result.data.poster_path}`)
     setMovieTitle(result.data.title)
-    setMovieVote((Math.floor(result.data.vote_average * 10) / 10))
-    setMovieDirector(result.data.credits.crew.find(crew => crew.job === "Director").original_name)
-    setMovieCast(result.data.credits.cast.slice(0, 3).map(cast => `${cast.name}`).join(", "))
+    setMovieVote(Math.floor(result.data.vote_average * 10) / 10)
+    setMovieDirector(
+      result.data.credits.crew.find((crew) => crew.job === "Director")
+        .original_name
+    )
+    setMovieCast(
+      result.data.credits.cast
+        .slice(0, 3)
+        .map((cast) => `${cast.name}`)
+        .join(", ")
+    )
     setMovieDate(result.data.release_date.split("-").reverse().join("-"))
-    setMovieDuration(`${Math.floor(result.data.runtime / 60)} h ${result.data.runtime % 60} m`)
-    setMovieGenre(result.data.genres.map(genre => genre.name).join(", "))
+    setMovieDuration(
+      `${Math.floor(result.data.runtime / 60)} h ${result.data.runtime % 60} m`
+    )
+    setMovieGenre(result.data.genres.map((genre) => genre.name).join(", "))
     setMovieSummary(result.data.overview)
   }, [])
 
@@ -72,7 +85,7 @@ const useFetch = () => {
     genre: movieGenre,
     summary: movieSummary,
     getPosters: getPosters,
-    getDetails: getDetails
+    getDetails: getDetails,
   }
 }
 
